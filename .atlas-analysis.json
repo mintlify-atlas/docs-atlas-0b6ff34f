@@ -1,0 +1,78 @@
+{
+  "projectType": "saas",
+  "projectName": "Codexa",
+  "projectDescription": "An AI-powered web-based code editor with a built-in AI assistant, inline autocomplete, file explorer, project management, and multi-language template support.",
+  "theme": "luma",
+  "primaryColor": "#397de7",
+  "lightColor": "#214174",
+  "darkColor": "#131523",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "quickstart",
+              "authentication"
+            ]
+          },
+          {
+            "group": "Core Features",
+            "pages": [
+              "features/projects",
+              "features/editor",
+              "features/ai-assistant",
+              "features/file-explorer",
+              "features/templates"
+            ]
+          },
+          {
+            "group": "Customization",
+            "pages": [
+              "customization/editor-themes",
+              "customization/settings"
+            ]
+          },
+          {
+            "group": "Account & Billing",
+            "pages": [
+              "account/profile",
+              "account/subscription"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "Monaco-based code editor with syntax highlighting for multiple languages",
+    "AI assistant with streaming responses in Agent and Ask modes",
+    "AI inline code autocomplete triggered while typing",
+    "File explorer with full CRUD: create, rename, delete files and folders",
+    "Project management dashboard with recent and all-projects views",
+    "Diff viewer to preview and accept/reject AI-suggested code changes",
+    "30+ language and framework templates to jumpstart projects",
+    "Customizable editor themes (50+ themes including Dracula, Nord, Monokai, Night Owl)",
+    "User authentication with session management and token refresh",
+    "Subscription billing via Paystack with free and paid plans"
+  ],
+  "publicApiSurface": [
+    "POST /api/auth/login/",
+    "POST /api/auth/register/",
+    "POST /api/auth/refresh/",
+    "GET /api/auth/me/",
+    "PATCH /api/users/{id}/update/",
+    "DELETE /api/users/{id}/delete/",
+    "GET /api/projects/?page={page}",
+    "GET /api/projects/{slug}/",
+    "PATCH /api/projects/{slug}/",
+    "DELETE /api/projects/{slug}/",
+    "POST /api/subscriptions/initialize/",
+    "GET /api/ai/history/{slug}/",
+    "POST /api/ai/autocomplete/",
+    "POST /api/ai/assistant/"
+  ]
+}

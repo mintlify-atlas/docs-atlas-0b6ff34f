@@ -1,0 +1,85 @@
+---
+title: "Projects"
+description: "Create, manage, and organize your coding projects from the Codexa dashboard."
+---
+
+The Projects dashboard is the starting point of Codexa. It shows your **Recent Projects** and a complete **All Projects** listing, giving you quick access to everything you're working on.
+
+## Dashboard overview
+
+When you sign in, the dashboard is split into two sections:
+
+- **Recent Projects** — displays the 3 most recently updated projects as thumbnail cards so you can pick up where you left off.
+- **All Projects** — a paginated, full listing of every project you own. Switch between list and grid view using the toggle in the section header.
+
+Clicking any project card navigates you directly into the editor at `/editor?project=<slug>`.
+
+---
+
+## Project statuses
+
+Every project has a status that reflects its current stage of development.
+
+<CardGroup cols={2}>
+  <Card title="Production" icon="rocket">
+    The project is live and serving real users. Treat changes with care.
+  </Card>
+  <Card title="Development" icon="code">
+    Active development is in progress. The default status for new projects.
+  </Card>
+  <Card title="Preview" icon="eye">
+    A preview or staging build that is not yet production-ready.
+  </Card>
+  <Card title="Archived" icon="box-archive">
+    The project is no longer actively maintained and has been archived.
+  </Card>
+</CardGroup>
+
+---
+
+## Creating a project
+
+<Steps>
+  <Step title="Open the Create Project modal">
+    Click the **New Project** button in the header or sidebar. The **Create New Project** dialog opens.
+  </Step>
+  <Step title="Enter a project name">
+    Type a name for your project in the **Project Name** field (e.g. `My Awesome Startup`). A name is required.
+  </Step>
+  <Step title="Select a framework or language">
+    Use the **Framework / Language** dropdown to choose from 37 available options, such as React, Python, Go, or Flutter. This sets the project language tag and thumbnail.
+  </Step>
+  <Step title="Submit">
+    Click **Create Project**. Once the project is created successfully, you are automatically redirected to the editor for that project.
+  </Step>
+</Steps>
+
+<Note>
+  Free plan accounts are limited to **3 projects**. If you reach the limit, the modal will prompt you to upgrade to Pro for unlimited projects.
+</Note>
+
+---
+
+## Opening a project
+
+Click any project card in either the **Recent Projects** or **All Projects** section. You will be taken to the editor at:
+
+```
+/editor?project=<project-slug>
+```
+
+### Quick search
+
+Press **Cmd+K** (Mac) / **Ctrl+K** (Windows/Linux) from the dashboard to open the project search modal. Start typing a project name to filter results, then click or press **Enter** to open it in the editor.
+
+---
+
+## Deleting a project
+
+1. Hover over a project card to reveal the **⋯** (more options) menu.
+2. Click **Delete Project** from the dropdown.
+3. Confirm the action in the confirmation dialog that appears.
+
+<Warning>
+  Project deletion is permanent. All files, history, and AI chat associated with the project will be removed and cannot be recovered.
+</Warning>

@@ -1,0 +1,74 @@
+---
+title: "File Explorer"
+description: "A full-featured file tree in the left sidebar for creating, renaming, deleting, and navigating files and folders in your project."
+---
+
+The File Explorer lives in the **left sidebar**, accessible via the Files icon in the activity bar. It displays the complete file tree for the currently open project and supports full create, rename, and delete operations.
+
+---
+
+## Navigating files
+
+Click any file in the tree to open it in the editor. The file is added to the open tabs bar at the top of the editor and becomes the active file. The active file is highlighted in the explorer.
+
+Folders can be expanded and collapsed by clicking them. Nested folder structures are supported at any depth.
+
+---
+
+## File icons
+
+Each file is shown with a language-specific icon sourced from [vscode-icons](https://github.com/vscode-icons/vscode-icons). Icons are resolved automatically from the file extension, so a `.tsx` file shows a React icon and a `.py` file shows a Python icon.
+
+---
+
+## Creating a new file
+
+<Steps>
+  <Step title="Choose where to create the file">
+    To create a file at the **root level**, hover over the project name at the top of the explorer to reveal the **+** (New File) and folder icons. Click the file icon.
+
+    To create a file **inside a folder**, hover over that folder to reveal its action buttons, then click the **New File** icon.
+  </Step>
+  <Step title="Type the file name">
+    An inline input appears in the tree. Type the name of the new file, including its extension (e.g. `index.ts`).
+  </Step>
+  <Step title="Confirm">
+    Press **Enter** to create the file. Press **Escape** to cancel. The new file opens automatically in the editor.
+  </Step>
+</Steps>
+
+---
+
+## Creating a new folder
+
+The same flow applies for folders. Click the **New Folder** icon (at the root level or inside an existing folder), type a name, and press **Enter** to confirm or **Escape** to cancel.
+
+---
+
+## Renaming a file or folder
+
+<Steps>
+  <Step title="Hover to reveal actions">
+    Hover over the file or folder you want to rename. A row of action icons appears on the right side of the item.
+  </Step>
+  <Step title="Click the Rename icon">
+    Click the **Edit** (pencil) icon. The name text is replaced with an inline input pre-filled with the current name.
+  </Step>
+  <Step title="Edit the name and confirm">
+    Change the name as needed, then press **Enter** to save. Press **Escape** to cancel and restore the original name.
+  </Step>
+</Steps>
+
+<Note>
+  Duplicate names in the same directory are not allowed. If you try to rename a file or folder to a name that already exists at the same level, the rename will be rejected with an error toast.
+</Note>
+
+---
+
+## Deleting a file or folder
+
+Hover over the file or folder to reveal its action buttons, then click the **Delete** (trash) icon. A confirmation dialog appears asking you to confirm the deletion.
+
+<Warning>
+  Deletion is **permanent**. There is no undo. Deleting a folder removes all of its contents recursively. Any deleted files that were open in the editor are automatically closed.
+</Warning>

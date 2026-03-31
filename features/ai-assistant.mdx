@@ -1,0 +1,78 @@
+---
+title: "AI Assistant"
+description: "A conversational AI panel on the right side of the editor that can answer questions about your code or directly modify your files."
+---
+
+The AI Assistant is a chat panel on the **right side of the editor**. Toggle it open or closed using the **right panel button** in the editor header (top-right area), or press **Cmd+\** (Mac) / **Ctrl+\** (Windows/Linux). It supports two distinct modes — **Agent** and **Ask** — selectable via toggle buttons at the bottom of the input area.
+
+---
+
+## Modes
+
+<Tabs>
+  <Tab title="Agent mode">
+    In Agent mode, the AI can **read and modify your project files**. When you send a message, the AI returns a new version of the file tree. Files that have been changed are automatically opened in the editor's [diff view](/features/editor#diff-view-and-reviewing-ai-changes), where you can review and accept or reject each change before it is applied.
+
+    Use Agent mode when you want the AI to:
+    - Write or refactor code in your files
+    - Add new features or fix bugs
+    - Restructure or reorganize project files
+  </Tab>
+  <Tab title="Ask mode">
+    In Ask mode, the AI **answers questions without modifying any files**. Responses are plain conversational text (with code blocks where relevant).
+
+    Use Ask mode when you want to:
+    - Understand how a piece of code works
+    - Ask for explanations, examples, or documentation
+    - Get suggestions without automatically applying them
+  </Tab>
+</Tabs>
+
+---
+
+## Sending a message
+
+<Steps>
+  <Step title="Open the AI Assistant panel">
+    Click the **right panel toggle** button in the editor header (top-right), or press **Cmd+\** (Mac) / **Ctrl+\** (Windows/Linux), to reveal the AI Assistant panel.
+  </Step>
+  <Step title="Choose a mode">
+    Toggle between **Agent** and **Ask** using the buttons at the bottom-left of the input box. The active mode is highlighted in blue.
+  </Step>
+  <Step title="Optionally attach a file">
+    Click the paperclip or image icon to attach a file. Supported attachment types are **JPEG**, **PNG**, and **PDF**. The attached file is sent along with your message.
+  </Step>
+  <Step title="Type your message">
+    Enter your question or instruction in the text area. Press **Enter** to send, or **Shift+Enter** for a new line.
+  </Step>
+  <Step title="Wait for the response">
+    The AI response streams in real time. A loading indicator (three bouncing dots) is shown while streaming is in progress. You cannot send another message until the current response finishes.
+  </Step>
+</Steps>
+
+<Warning>
+  In **Agent mode**, always review the diff carefully before clicking Accept. The AI may modify multiple files at once. Accepting applies all changes immediately and saves them to your project.
+</Warning>
+
+---
+
+## Streaming responses
+
+AI responses are streamed token-by-token in real time. You can read the response as it arrives without waiting for it to fully complete.
+
+---
+
+## Conversation history
+
+Chat history is **persisted per project** and loaded automatically when you reopen the editor for that project. You will see your full previous conversation each time you return.
+
+---
+
+## Code blocks in responses
+
+When the AI includes code in its response, it is rendered in a dedicated code block with:
+
+- A **language label** in the top-left corner (e.g. `typescript`, `python`)
+- A **Copy** button in the top-right corner
+
+Click **Copy** to copy the code content to your clipboard. The button temporarily shows a checkmark to confirm the copy was successful.

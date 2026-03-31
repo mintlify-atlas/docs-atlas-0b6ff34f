@@ -1,0 +1,91 @@
+---
+title: "Code Editor"
+description: "A full-featured Monaco-based code editor with syntax highlighting, open file tabs, inline AI autocomplete, and diff review."
+---
+
+The Codexa code editor is built on [Monaco Editor](https://microsoft.github.io/monaco-editor/) — the same engine that powers VS Code. It sits at the center of the editor layout, between the File Explorer on the left and the AI Assistant panel on the right.
+
+---
+
+## Open file tabs
+
+A tabs bar runs along the top of the editor. Each file you open from the File Explorer is added as a tab. Click a tab to switch to that file. Close a tab with the **×** button; focus automatically moves to the next available open file.
+
+---
+
+## Syntax highlighting
+
+The editor detects the language from each file's extension and applies the appropriate syntax highlighting.
+
+<Note>
+  Supported languages and their file extensions:
+
+  | Language | Extensions |
+  |---|---|
+  | JavaScript | `.js`, `.jsx` |
+  | TypeScript | `.ts`, `.tsx` |
+  | HTML | `.html` |
+  | CSS | `.css` |
+  | JSON | `.json` |
+  | Markdown | `.md` |
+  | Python | `.py` |
+
+  Files with other extensions open as plain text.
+</Note>
+
+---
+
+## Inline AI autocomplete
+
+As you type, the editor sends your code context to an AI model and displays a continuation suggestion directly inline (grayed-out ghost text).
+
+### How inline autocomplete works
+
+<Steps>
+  <Step title="Write code normally">
+    Open a file and start typing. The autocomplete engine monitors your keystrokes.
+  </Step>
+  <Step title="Trigger a suggestion">
+    A suggestion is requested automatically when you type any of the following characters: **space**, **`.`**, **`(`**, **`{`**, or **newline**. The AI receives up to 20 lines of context before the cursor.
+  </Step>
+  <Step title="Review the ghost text">
+    The AI-generated continuation appears inline, after your cursor, rendered as dimmed ghost text.
+  </Step>
+  <Step title="Accept or dismiss">
+    Press **Tab** to accept the suggestion and insert it into your code. Continue typing to dismiss it and let a new suggestion be generated on your next trigger character.
+  </Step>
+</Steps>
+
+---
+
+## Diff view and reviewing AI changes
+
+When the AI Assistant (in Agent mode) proposes changes to a file, the editor switches to a **diff view** instead of the normal editor. The diff view shows the original file content on the left and the AI-proposed version on the right, side by side.
+
+A floating toolbar appears at the bottom of the editor with two actions:
+
+- **Accept** — applies the AI's changes and saves the updated file to the project.
+- **Reject** — discards the proposed changes and restores the original file.
+
+<Tip>
+  Review the diff carefully before accepting. The diff view is read-only — you cannot edit the modified version directly. If the suggestion is mostly correct but needs a small tweak, accept it first and then edit the file manually.
+</Tip>
+
+---
+
+## Auto-save
+
+Every keystroke is saved automatically. You do not need to press Cmd/Ctrl+S. Changes are written to the project's file tree immediately as you type. The save status is shown in the center of the editor header — **Saving...**, **Saved**, or **Failed to save**.
+
+---
+
+## Keyboard shortcuts
+
+| Shortcut | Action |
+|---|---|
+| `Cmd/Ctrl` + `B` | Toggle the left panel (File Explorer / sidebar) |
+| `Cmd/Ctrl` + `\` or `Cmd/Ctrl` + `D` | Toggle the right panel (AI Assistant) |
+| `Cmd/Ctrl` + `W` | Close the current tab |
+| `Cmd/Ctrl` + `Tab` | Switch to the next open file tab |
+| `Cmd/Ctrl` + `Shift` + `Tab` | Switch to the previous open file tab |
+| `Tab` | Accept inline AI autocomplete suggestion |
